@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREACION DE PAGINA DE PRUEBA</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+            display: flex;
+            justify-content: inherit;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: rgba(92, 165, 8, 0.548);
+            padding: 8px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(211, 10, 10, 0.801);
+        }
+        h1 {
+            color: #111010fb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Hola, ESTIMADO USUARIO!</h1>
+        <p>ESTA PAGINA ESTA CREADA CON ENLACES QUE LE SERAN DE MUCHA AYUDA   </p>
+        <a href="https://www.uniandes.edu.ec"target="_blank">Enlace UNIANDES</a>
+        <h3>Enlace mediante imagen</h3>
+        <a href="https://www.google.com/"target="_blank">
+            <img src="/google.png" width="50px" height="30px" alt="">
+        </a>
+                <h1>Operaciones Matematicas Basicas .</h1>
+                <div class="calculadora">
+                    <h2>Calculadora Básica</h2>
+                    <label for="num1">Número 1:</label>
+                    <input type="number" id="num1" required><br>
+                    <label for="num2">Número 2:</label>
+                    <input type="number" id="num2" required><br>
+                    <label for="operation">Operación:</label>
+                    <select id="operation">
+                        <option value="sum">Suma</option>
+                        <option value="subtract">Resta</option>
+                        <option value="multiply">Multiplicación</option>
+                        <option value="divide">División</option>
+                    </select><br><br>
+                    <button onclick="calculate()">Calcular</button>
+                    <h1>Resultado: <span id="result"></span></h1>
+                </div>
+                <script>
+                    function calculate() {
+                        const num1 = parseFloat(document.getElementById('num1').value);
+                        const num2 = parseFloat(document.getElementById('num2').value);
+                        const operation = document.getElementById('operation').value;
+                        let result;
+            
+                        if (isNaN(num1) || isNaN(num2)) {
+                            result = 'Por favor ingrese dos números válidos.';
+                        } else {
+                            switch (operation) {
+                                case 'sum':
+                                    result = num1 + num2;
+                                    break;
+                                case 'subtract':
+                                    result = num1 - num2;
+                                    break;
+                                case 'multiply':
+                                    result = num1 * num2;
+                                    break;
+                                case 'divide':
+                                    if (num2 === 0) {
+                                        result = 'No se puede dividir entre cero.';
+                                    } else {
+                                        result = num1 / num2;
+                                    }
+                                    break;
+                                default:
+                                    result = 'Operación no válida.';
+                            }
+                        }
+            
+                        document.getElementById('result').innerText = result;
+                    }
+                </script>     
+    </div>
+</body>
+</html>
