@@ -1,5 +1,18 @@
-body {
-    background-image: url("/photo1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+#about img {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+}
+    #contact {
+    padding: 20px;
+    background: #35424a;
+    color: #ffffff;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #ffffff;
 }

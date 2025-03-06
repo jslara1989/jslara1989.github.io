@@ -1,93 +1,136 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
+<head>    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CREACION DE PAGINA DE PRUEBA</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Portafolio de Desarrollador</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: arial, sans-serif;
             margin: 0;
             padding: 0;
-            
-            display: flex;
-            justify-content: inherit;
-            align-items: center;
-            height: 100vh;
+            background-color: #f4f4f4;
+            color: #333;
         }
         .container {
-            background-color: rgba(92, 165, 8, 0.548);
-            padding: 8px;
-            border-radius: 20px;
-            box-shadow: 0 4px 8px rgba(211, 10, 10, 0.801);
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            
         }
-        h1 {
-            color: #111010fb;
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 15px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        #showcase {
+            min-height: 500px;
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding-top: 100px;
+        }
+        #showcase h1 {
+            font-size: 55px;
+            margin-top: 0;
+        }
+        #about {
+            padding: 20px;
+            background: #ffffff;
+            color: #333;
+        }
+        #about img {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            display: block;
+            margin: 20px auto;
+        }
+            #contact {
+            padding: 20px;
+            background: #35424a;
+            color: #ffffff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>¡Hola, ESTIMADO USUARIO!</h1>
-        <p>ESTA PAGINA ESTA CREADA CON ENLACES QUE LE SERAN DE MUCHA AYUDA   </p>
-        <a href="https://www.uniandes.edu.ec"target="_blank">Enlace UNIANDES</a>
-        <h3>Enlace mediante imagen</h3>
-        <a href="https://www.google.com/"target="_blank">
-            <img src="/google.png" width="50px" height="30px" alt="">
-        </a>
-                <h1>Operaciones Matematicas Basicas .</h1>
-                <div class="calculadora">
-                    <h2>Calculadora Básica</h2>
-                    <label for="num1">Número 1:</label>
-                    <input type="number" id="num1" required><br>
-                    <label for="num2">Número 2:</label>
-                    <input type="number" id="num2" required><br>
-                    <label for="operation">Operación:</label>
-                    <select id="operation">
-                        <option value="sum">Suma</option>
-                        <option value="subtract">Resta</option>
-                        <option value="multiply">Multiplicación</option>
-                        <option value="divide">División</option>
-                    </select><br><br>
-                    <button onclick="calculate()">Calcular</button>
-                    <h1>Resultado: <span id="result"></span></h1>
-                </div>
-                <script>
-                    function calculate() {
-                        const num1 = parseFloat(document.getElementById('num1').value);
-                        const num2 = parseFloat(document.getElementById('num2').value);
-                        const operation = document.getElementById('operation').value;
-                        let result;
-            
-                        if (isNaN(num1) || isNaN(num2)) {
-                            result = 'Por favor ingrese dos números válidos.';
-                        } else {
-                            switch (operation) {
-                                case 'sum':
-                                    result = num1 + num2;
-                                    break;
-                                case 'subtract':
-                                    result = num1 - num2;
-                                    break;
-                                case 'multiply':
-                                    result = num1 * num2;
-                                    break;
-                                case 'divide':
-                                    if (num2 === 0) {
-                                        result = 'No se puede dividir entre cero.';
-                                    } else {
-                                        result = num1 / num2;
-                                    }
-                                    break;
-                                default:
-                                    result = 'Operación no válida.';
-                            }
-                        }
-            
-                        document.getElementById('result').innerText = result;
-                    }
-                </script>     
-    </div>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Desarrollador Frontend</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#showcase">Inicio</a></li>
+                    <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="showcase">
+        <div class="container 1">
+            <h1>Bienvenido a mi Portafolio</h1>
+            <p>Construyo y diseño cosas con pasión y creatividad.</p>
+            <img src="img2.jpeg" alt="Foto de mí">
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <h2>Sobre mí</h2>
+            <img src="img1.png">
+            <p>Desarrollador frontend con experiencia en diseño y proyectos de ingeniería. Mi objetivo es crear soluciones innovadoras y eficientes.</p>
+            <p>Nombre: Jefferson Lara <br>
+               Carrera: Ingeniería en Sistemas <br>
+               Universidad: Universidad Regional Autónoma de los Andes <br>
+               Año de Estudio: 6to Semestre 
+
+            </p>   
+                       
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>Envíame un mensaje para colaborar en proyectos emocionantes.</p><br>
+            <p>Numero Movil 593-967791459</p>
+            <p>Gmail jlpmago1989@gmail.com</p>
+            <p>Sera un gusto poderte ayudar </p>
+        </div>
+    </section>
+    <footer>
+        <p>Portafolio de Desarrollador </p>
+    </footer>
 </body>
 </html>
